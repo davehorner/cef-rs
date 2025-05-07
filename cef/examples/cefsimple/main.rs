@@ -276,7 +276,8 @@ fn main() {
 
     let args = Args::new();
     let cmd = args.as_cmd_line().unwrap();
-
+    cmd.append_argument(Some(&"--enable-gpu".into()));
+    cmd.append_argument(Some(&"--use-angle=gl".into()));
     let sandbox = SandboxInfo::new();
 
     let switch = CefString::from("type");
